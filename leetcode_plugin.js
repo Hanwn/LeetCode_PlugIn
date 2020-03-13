@@ -1,3 +1,5 @@
+var arr_textarea_len = 0;
+var mark = true;
 var but = document.getElementsByClassName('custom-testcase__2YgB');
 but[0].onclick = runCode;
 
@@ -76,8 +78,10 @@ function manyLines(demo) {
 
 function fill_test_cases(){
 	var textarea = document.getElementsByClassName('testcase-editor__lA_R')[0];
-	var arr_textarea_len = textarea.value.split('\n').length;
-
+	if (mark) {
+		mark = false;
+		arr_textarea_len = textarea.value.split('\n').length;
+	}
 	var demo = document.getElementsByClassName('notranslate')[1].getElementsByTagName('pre');
 	var test_cases = "";
 	for (let i = 0; i < demo.length; i++) {
