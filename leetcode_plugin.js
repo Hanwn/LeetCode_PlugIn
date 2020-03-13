@@ -83,6 +83,9 @@ function fill_test_cases(){
 		arr_textarea_len = textarea.value.split('\n').length;
 	}
 	var demo = document.getElementsByClassName('notranslate')[1].getElementsByTagName('pre');
+	if (demo[0].innerText.split('\n')[0].slice(0,2) != "输入") {
+		return;
+	}
 	var test_cases = "";
 	for (let i = 0; i < demo.length; i++) {
 		if (arr_textarea_len == 1) {
